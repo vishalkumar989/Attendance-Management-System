@@ -1,0 +1,38 @@
+package com.attendance.myapp.services;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.attendance.myapp.models.Attendance;
+import com.attendance.myapp.repositories.AttendanceRepository;
+
+@Service
+public class AttendanceService {
+
+	@Autowired
+	private AttendanceRepository attendanceRepository;
+
+	// Get today's attendance for a course and subject
+	public List<Attendance> getTodayAttendance(Long courseId, Long subjectId) {
+		return attendanceRepository.findByCourseIdAndSubjectId(courseId, subjectId);
+	}
+
+	// Save attendance records
+	public String saveAttendance(List<Attendance> attendanceList) {
+
+		for (Attendance attendance : attendanceList) {
+			
+			if (attendanceRepository.existsByStudentIdAndCourseIdAndSubjectIdAndAttendanceDate(attendance.getStudentId(), attendance.getCourseId(), attendance.getSubjectId(), attendance.getAttendanceDate())) {
+				return "attendance already takken!";
+			} else {
+				attendanceRepository.saveAll(attendanceList);
+			}
+		}
+		return "All attendance records saved successfully";
+	}
+
+}

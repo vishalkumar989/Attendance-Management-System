@@ -1,0 +1,26 @@
+package com.attendance.myapp.repositories;
+
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.attendance.myapp.models.Attendance;
+
+@Repository
+public interface AttendanceRepository extends JpaRepository<Attendance, Long> {
+
+	List<Attendance> findByCourseIdAndSubjectIdAndAttendanceDate(Long courseId, Long subjectId,
+			Date attendanceDate);
+
+//	Optional<Attendance> findByStudentIdAndCourseIdAndSubjectIdAndAttendanceDate(Long studentId, Long courseId,
+//			Long subjectId, Date attendanceDate);
+
+	// Other methods as needed
+	boolean existsByStudentIdAndCourseIdAndSubjectIdAndAttendanceDate(Long studentId, Long courseId, Long subjectId,
+			Date attendanceDate);
+
+}

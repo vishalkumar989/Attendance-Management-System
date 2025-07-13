@@ -1,0 +1,74 @@
+package com.attendance.myapp.controllers;
+
+import org.springframework.web.bind.annotation.RestController;
+import com.attendance.myapp.models.Teacher;
+import com.attendance.myapp.services.TeacherService;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@RestController
+@CrossOrigin(origins = "http://localhost:5173")
+public class TeacherController {
+
+	@Autowired
+	TeacherService teacherService;
+
+	@PostMapping("/register")
+	public String teahcerRegister(@RequestBody Teacher teacher) {
+		Teacher registeredteacher = teacherService.saveTeacher(teacher);
+		System.out.println(teacher);
+		return "register success";
+	}
+
+	@PostMapping("/login")
+	public Teacher teacherLogin(@RequestBody Teacher loginDetails) {
+
+		Teacher teacher = teacherService.findByEmailIdAndpassword(loginDetails.getEmail(), loginDetails.getPassword());
+
+		if (teacher != null) {
+			teacher.setPassword(null);
+			return teacher;
+		}
+		return null;
+	}
+
+	@GetMapping("/teacher/courses")
+	public List<String> getCourses(@RequestParam int id) {
+		List<String> courses = teacherService.fetchCourses(id);
+
+		for (String course : courses) {
+			System.out.println(course);
+		}
+		return courses;
+	}
+
+	@PostMapping("/teacher/addclass")
+	public String postMethodName(@RequestBody String entity) {
+		// TODO: process POST request
+
+		return entity;
+	}
+
+	@GetMapping("/getallcourses")
+	public List<String> getAllCourses() {
+
+		List<String> AllCourses = teacherService.getAllCourses();
+		return AllCourses;
+	}
+	
+	@GetMapping("/getsubjects")
+	public List<String> getSubjectsByCourseAndSemester(@RequestParam String course, @RequestParam int semester) {
+		
+		List<String> subjects = teacherService.getSubjectsByCourseAndSemester(course, semester);
+		return null;
+	}
+	
+
+}

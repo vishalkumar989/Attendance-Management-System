@@ -1,0 +1,45 @@
+package com.attendance.myapp.services;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.attendance.myapp.models.Attendance;
+import com.attendance.myapp.repositories.AttendanceRepository;
+
+@Service
+public class AttendanceService {
+
+	@Autowired
+	private AttendanceRepository attendanceRepository;
+
+	// Get today's attendance for a course and subject
+	public List<Attendance> getTodayAttendance(Long courseId, Long subjectId) {
+		return attendanceRepository.findByCourseIdAndSubjectId(courseId, subjectId);
+	}
+
+	// Save attendance records
+	public String saveAttendance(List<Attendance> attendanceList) {
+	    // Fetch existing attendance records that match any of the input records
+	    List<Attendance> existingAttendances = attendanceList.stream()
+	            .filter(attendance -> attendanceRepository.existsByStudentIdAndCourseIdAndSubjectIdAndAttendanceDate(
+	                    attendance.getStudentId(),
+	                    attendance.getCourseId(),
+	                    attendance.getSubjectId(),
+	                    attendance.getAttendanceDate()))
+	            .collect(Collectors.toList());
+
+	    // If any existing records found, return a message without saving new records
+	    if (!existingAttendances.isEmpty()) {
+	        return "Some attendance records already exist. Save operation aborted to avoid duplicates.";
+	    }
+
+	    // Save all attendance records if no conflicts
+	    attendanceRepository.saveAll(attendanceList);
+	    return "All attendance records saved successfully";
+	}
+
+
+}
