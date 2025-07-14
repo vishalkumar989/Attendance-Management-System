@@ -1,0 +1,14 @@
+# Node modules and build files
+node_modules/
+dist/
+.vscode/
+.DS_Store
+
+# Java / Spring Boot ignores
+target/
+*.class
+*.jar
+*.war
+
+# System Files
+Thumbs.db
