@@ -1,0 +1,272 @@
+/* General Styles */
+.home-container {
+  font-family: "Arial", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  max-width: 100%; /* Ensure container doesn't exceed viewport width */
+  overflow-x: hidden; /* Prevent horizontal scroll in this container */
+}
+
+/* Background with white and larger light black dots */
+body {
+  background-color: white; /* Set the background color to white */
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.1) 2px, rgba(0, 0, 0, 0) 2px);
+  background-size: 25px 25px; /* Adjust the size of the dots and spacing */
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 10%;
+  background: linear-gradient(135deg, #ffffff, #f0f8ff);
+  min-height: 90vh;
+  text-align: left;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.hero-content {
+  flex: 1;
+  animation: fadeIn 1s ease-in-out;
+  transition: color 0.3s ease, font-size 0.3s ease; /* Add transition to text elements */
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  color: #228B22; /* Change color to green */
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease, font-size 0.3s ease; /* Add transition to text elements */
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 2rem;
+  transition: color 0.3s ease, font-size 0.3s ease; /* Add transition to text elements */
+}
+
+.join-us-btn {
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #228B22, #32CD32); /* Change color to green */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.join-us-btn:hover {
+  transform: translateY(-3px);
+  background-color: #2a3f70;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  animation: slideIn 1s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Why Choose Us */
+.why-choose-us {
+  padding: 3rem 10%;
+  background: linear-gradient(135deg, #ffffff, #f0f8ff);
+  text-align: center;
+}
+
+.why-choose-us h2 {
+  font-size: 2.8rem;
+  color: #228B22; /* Change color to green */
+  margin-bottom: 2rem;
+  transition: color 0.3s ease, font-size 0.3s ease; /* Add transition to text elements */
+}
+
+.feature-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  flex: 1;
+  text-align: center;
+  background: #fff;
+  border-radius: 15px;
+  padding: 2.5rem;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.feature-item img {
+  width: 120px;
+  margin-bottom: 1.5rem;
+}
+
+.feature-item h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333;
+  transition: color 0.3s ease, font-size 0.3s ease; /* Add transition to text elements */
+}
+
+.feature-item p {
+  font-size: 1.1rem;
+  color: #555;
+  transition: color 0.3s ease, font-size 0.3s ease; /* Add transition to text elements */
+}
+
+/* Call to Action */
+.call-to-action {
+  padding: 4rem 10%;
+  background: linear-gradient(135deg, #228B22, #32CD32); /* Change color to green */
+  color: white;
+  text-align: center;
+}
+
+.call-to-action h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: white;
+  transition: color 0.3s ease, font-size 0.3s ease; /* Add transition to text elements */
+}
+
+.call-to-action .join-us-btn {
+  background: white;
+  color: #228B22; /* Change color to green */
+  padding: 1.2rem 3rem;
+  font-size: 1.3rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.call-to-action .join-us-btn:hover {
+  transform: translateY(-3px);
+  background-color: #f0f0f0;
+}
+
+/* What is Our App Section */
+.what-is-app {
+  padding: 4rem 10%;
+  background: linear-gradient(135deg, #ffffff, #f0f8ff);
+  text-align: center;
+  max-width: 1600px; /* Ensuring it fits large screens */
+  margin: 0 auto;
+  width: 100%;
+}
+
+.what-is-app h2 {
+  font-size: 2.8rem; /* Larger heading */
+  font-weight: bold;
+  color: #228B22; /* Change color to green */
+  margin-bottom: 2rem;
+  transition: color 0.3s ease, font-size 0.3s ease; /* Add transition to text elements */
+}
+
+.app-description {
+  font-size: 1.2rem; /* Increased font size for better readability */
+  line-height: 1.8;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 1.5rem;
+  transition: color 0.3s ease, font-size 0.3s ease; /* Add transition to text elements */
+}
+
+.app-description p {
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease, font-size 0.3s ease; /* Add transition to text elements */
+}
+
+/* Add a subtle border or shadow around the section */
+.what-is-app {
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* For larger devices, adjust the spacing to balance the section */
+@media (max-width: 768px) {
+  .what-is-app {
+    padding: 3rem 5%;
+  }
+
+  .what-is-app h2 {
+    font-size: 2.5rem;
+  }
+
+  .app-description {
+    font-size: 1.1rem;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-content h1 {
+    padding-top: 1rem;
+    line-height: normal;
+  }
+
+  .join-us-btn {
+    margin-bottom: 1rem;
+  }
+
+  .hero-image {
+    max-width: 100%;
+  }
+
+  .feature-grid {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .feature-item {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}

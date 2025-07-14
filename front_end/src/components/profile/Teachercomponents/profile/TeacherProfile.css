@@ -1,0 +1,111 @@
+/* General Styles */
+body {
+  background-color: white; /* Set the background color to white */
+  background-image: radial-gradient(circle, rgba(0, 128, 0, 0.1) 2px, rgba(0, 0, 0, 0.1) 2px, rgba(0, 0, 0, 0) 4px); /* Green and black dots */
+  background-size: 25px 25px; /* Adjust the size of the dots and spacing */
+  transition: background-color 0.3s ease;
+}
+
+/* Teacher Profile Wrapper */
+.teacher-profile-wrapper {
+  display: flex;
+  min-height: 100vh;
+  transition: min-height 0.3s ease;
+}
+
+/* Sidebar */
+.teacher-sidebar {
+  width: 250px;
+  background-color: #2ebbad; /* Matching the navbar color */
+  color: white;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: -250px; /* Hidden by default */
+  height: 100%;
+  transition: left 0.3s ease, background-color 0.3s ease, padding 0.3s ease, height 0.3s ease;
+  z-index: 1000;
+}
+
+.teacher-sidebar.visible {
+  left: 0; /* Show when open */
+}
+
+/* Close button for the sidebar */
+.sidebar-close-btn {
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  transition: font-size 0.3s ease, color 0.3s ease, top 0.3s ease, right 0.3s ease;
+}
+
+/* Sidebar title and menu */
+.sidebar-title {
+  margin-bottom: 2rem;
+  transition: margin-bottom 0.3s ease;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  transition: padding 0.3s ease;
+}
+
+.sidebar-menu-item {
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: color 0.3s, margin 0.3s ease;
+}
+
+.sidebar-menu-item:hover {
+  color: #ddd;
+}
+
+/* Main content styling */
+.teacher-profile-content {
+  flex-grow: 1;
+  padding: 20px;
+  margin-left: 0; /* No margin to start with */
+  transition: margin-left 0.3s ease, padding 0.3s ease, flex-grow 0.3s ease;
+}
+
+.teacher-profile-content {
+  margin-left: 250px; /* Ensure space for the sidebar */
+}
+
+/* Sidebar toggle button */
+.teacher-sidebar-toggle {
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  position: fixed;
+  top: 15px; /* Position in the navbar area */
+  left: 20px; /* Position in the navbar area */
+  z-index: 1001;
+  transition: font-size 0.3s ease, color 0.3s ease, top 0.3s ease, left 0.3s ease;
+}
+
+/* Adjust when the sidebar is open */
+.teacher-sidebar.visible + .teacher-profile-content {
+  margin-left: 250px; /* Adjust content margin when sidebar is open */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .teacher-sidebar {
+    left: -250px; /* Hidden by default */
+  }
+
+  .teacher-sidebar.visible {
+    left: 0; /* Show when open */
+  }
+
+  .teacher-profile-content {
+    margin-left: 0; /* No margin on small screens */
+  }
+}

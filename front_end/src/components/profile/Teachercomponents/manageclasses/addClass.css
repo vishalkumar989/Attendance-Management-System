@@ -1,0 +1,58 @@
+/* General Styles */
+body {
+  background-color: white; /* Set the background color to white */
+  background-image: radial-gradient(circle, rgba(0, 128, 0, 0.1) 2px, rgba(0, 0, 0, 0.1) 2px, rgba(0, 0, 0, 0) 4px); /* Green and black dots */
+  background-size: 25px 25px; /* Adjust the size of the dots and spacing */
+  transition: background-color 0.3s ease;
+}
+
+/* Add Class Form */
+.add-class-form {
+  background-color: white;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease, margin-bottom 0.3s ease, border-radius 0.3s ease;
+}
+
+/* Apply margin to create spacing between input fields */
+.add-class-form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.2s ease, background-color 0.3s ease;
+}
+
+.add-class-form select:focus {
+  border-color: #007bff;
+}
+
+/* Add some spacing to the button as well */
+.add-class-form button {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem; /* Spacing above the button */
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.add-class-form button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 91, 187, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .add-class-form {
+    padding: 1rem;
+  }
+}

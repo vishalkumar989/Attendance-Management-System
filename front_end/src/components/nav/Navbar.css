@@ -1,0 +1,162 @@
+/* General Styles */
+body {
+  background-color: white; /* Set the background color to white */
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.1) 2px, rgba(0, 0, 0, 0) 2px);
+  background-size: 25px 25px; /* Adjust the size of the dots and spacing */
+  transition: background-color 0.3s ease;
+}
+
+/* Basic Styling */
+.navbar {
+  background-color: #228B22; /* Change color to green */
+  padding: 1rem 2rem;
+  color: white;
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  transition: max-width 0.3s ease, margin 0.3s ease;
+}
+
+.navbar-logo {
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: padding-left 0.3s ease, font-size 0.3s ease, font-weight 0.3s ease;
+}
+
+/* Navbar Links Styling */
+.navbar-links {
+  display: flex;
+  gap: 1rem;
+  transition: gap 0.3s ease;
+}
+
+/* Navbar Link Styling */
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease, border-radius 0.3s ease;
+}
+
+.navbar-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Hamburger Icon Styling for Small Screens */
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: display 0.3s ease, background 0.3s ease, border 0.3s ease;
+}
+
+.navbar-icon {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  display: block;
+  margin: 5px 0;
+  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, background-color 0.3s ease, margin 0.3s ease;
+}
+
+/* Open Animation for Hamburger Icon */
+.navbar-icon.open {
+  transform: rotate(45deg);
+}
+
+.navbar-icon.open::before {
+  transform: rotate(90deg);
+  top: 0;
+}
+
+.navbar-icon.open::after {
+  transform: rotate(90deg);
+  bottom: 0;
+}
+
+/* Hamburger lines (before and after) */
+.navbar-icon::before,
+.navbar-icon::after {
+  content: "";
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  display: block;
+  position: absolute;
+  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar-icon::before {
+  top: -8px;
+}
+
+.navbar-icon::after {
+  bottom: -8px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .navbar-links {
+    position: absolute;
+    top: 60px; /* Adjust this if needed */
+    left: 0;
+    right: 0;
+    background-color: #228B22; /* Change color to green */
+    display: none;
+    flex-direction: column;
+    padding: 1rem;
+    z-index: 1000; /* Ensure it displays on top */
+    transition: top 0.3s ease, left 0.3s ease, right 0.3s ease, background-color 0.3s ease, display 0.3s ease, flex-direction 0.3s ease, padding 0.3s ease, z-index 0.3s ease;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-link {
+    padding: 1rem;
+    text-align: center;
+  }
+}
+
+/* Text Animation */
+@keyframes textFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar-link {
+  animation: textFadeIn 0.5s ease forwards;
+  animation-delay: calc(0.1s * var(--item-index)); /* Delay based on index */
+}
+
+/* Apply animation delay to each navbar link */
+.navbar-link:nth-child(1) {
+  --item-index: 1;
+}
+.navbar-link:nth-child(2) {
+  --item-index: 2;
+}
+.navbar-link:nth-child(3) {
+  --item-index: 3;
+}
+/* Add more as needed */

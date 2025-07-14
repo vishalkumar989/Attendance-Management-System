@@ -1,0 +1,146 @@
+/* General Styles */
+body {
+  background-color: white; /* Set the background color to white */
+  background-image: radial-gradient(circle, rgba(0, 128, 0, 0.1) 2px, rgba(0, 0, 0, 0) 2px); /* Green dots */
+  background-size: 25px 25px; /* Adjust the size of the dots and spacing */
+  transition: background-color 0.3s ease;
+}
+
+/* Profile Section */
+.profile-section {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, border-radius 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease, max-width 0.3s ease, margin 0.3s ease;
+}
+
+/* Profile Header */
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content */
+  gap: 15px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  transition: gap 0.3s ease, padding-bottom 0.3s ease, margin-bottom 0.3s ease, border-bottom 0.3s ease;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #007bff;
+  transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease, border 0.3s ease;
+}
+
+.header-details {
+  text-align: center; /* Center text */
+  transition: text-align 0.3s ease;
+}
+
+.profile-header h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 0;
+  transition: font-size 0.3s ease, color 0.3s ease, margin-bottom 0.3s ease;
+}
+
+.profile-subtext {
+  font-size: 1.2rem;
+  color: #666;
+  transition: font-size 0.3s ease, color 0.3s ease;
+}
+
+.badge {
+  background-color: #28a745;
+  color: white;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  border-radius: 15px;
+  width: fit-content;
+  margin-top: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease, font-size 0.3s ease, padding 0.3s ease, border-radius 0.3s ease, width 0.3s ease, margin-top 0.3s ease;
+}
+
+/* Profile Info */
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: flex-direction 0.3s ease, gap 0.3s ease;
+}
+
+.info-section {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, padding 0.3s ease, border-radius 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-section h3 {
+  color: #333;
+  margin-bottom: 15px;
+  transition: color 0.3s ease, margin-bottom 0.3s ease;
+}
+
+.info-section p {
+  margin: 8px 0;
+  color: #555;
+  line-height: 1.5;
+  transition: margin 0.3s ease, color 0.3s ease, line-height 0.3s ease;
+}
+
+.attendance {
+  font-weight: bold;
+  transition: font-weight 0.3s ease;
+}
+
+.attendance.good {
+  color: #28a745;
+  transition: color 0.3s ease;
+}
+
+.attendance.poor {
+  color: #dc3545;
+  transition: color 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-section {
+    padding: 15px;
+  }
+
+  .profile-header {
+    gap: 10px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .profile-subtext {
+    font-size: 1rem;
+  }
+
+  .info-section {
+    padding: 10px;
+  }
+
+  .info-section h3 {
+    font-size: 1.2rem;
+  }
+}

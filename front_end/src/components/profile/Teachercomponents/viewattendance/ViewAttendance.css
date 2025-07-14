@@ -1,0 +1,78 @@
+/* General Styles */
+body {
+  background-color: white; /* Set the background color to white */
+  background-image: radial-gradient(circle, rgba(0, 128, 0, 0.1) 2px, rgba(0, 0, 0, 0.1) 2px, rgba(0, 0, 0, 0) 4px); /* Green and black dots */
+  background-size: 25px 25px; /* Adjust the size of the dots and spacing */
+  transition: background-color 0.3s ease;
+}
+
+/* View Attendance Container */
+.view-attendance-container {
+  padding: 20px;
+  background-color: #f4f4f4; /* Light gray background */
+  min-height: 100vh; /* Full height for the container */
+  transition: padding 0.3s ease, background-color 0.3s ease, min-height 0.3s ease;
+}
+
+/* View Attendance Header */
+.view-attendance-header {
+  margin-bottom: 20px;
+  text-align: center; /* Center the header */
+  transition: margin-bottom 0.3s ease, text-align 0.3s ease;
+}
+
+/* Course Cards */
+.course-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Flexible card sizes */
+  gap: 20px; /* Spacing between cards */
+  padding: 10px; /* Padding around the card grid */
+  transition: gap 0.3s ease, padding 0.3s ease, grid-template-columns 0.3s ease;
+}
+
+.course-card {
+  background-color: white; /* Card background */
+  border: 1px solid #ddd; /* Light border for cards */
+  border-radius: 8px; /* Rounded corners */
+  padding: 15px; /* Inner padding for card content */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease, padding 0.3s ease;
+}
+
+.course-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Course Name */
+.course-name {
+  font-size: 1.5em; /* Larger font for course name */
+  margin-bottom: 10px; /* Space below course name */
+  color: #333; /* Darker color for readability */
+  transition: font-size 0.3s ease, margin-bottom 0.3s ease, color 0.3s ease;
+}
+
+/* Subject Card */
+.subject-card {
+  background-color: #f9f9f9; /* Subject card background */
+  margin-top: 10px; /* Space between subject cards */
+  padding: 10px; /* Inner padding for subject card */
+  border-radius: 4px; /* Rounded corners for subject cards */
+  border: 1px solid #ddd; /* Light border for subject cards */
+  cursor: pointer; /* Show pointer on hover */
+  transition: background-color 0.3s ease, padding 0.3s ease, border-radius 0.3s ease, border 0.3s ease, margin-top 0.3s ease;
+}
+
+.subject-card:hover {
+  background-color: #e9ecef; /* Change background on hover */
+}
+
+/* Selected Subject */
+.selected-subject {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #fff; /* White background for selected subject */
+  border: 1px solid #ddd; /* Light border for selected subject */
+  border-radius: 4px; /* Rounded corners */
+  transition: background-color 0.3s ease, padding 0.3s ease, border-radius 0.3s ease, border 0.3s ease, margin-top 0.3s ease;
+}

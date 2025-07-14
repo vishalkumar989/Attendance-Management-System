@@ -1,0 +1,112 @@
+/* General Styles */
+body {
+  background-color: white; /* Set the background color to white */
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.1) 2px, rgba(0, 0, 0, 0) 2px);
+  background-size: 25px 25px; /* Adjust the size of the dots and spacing */
+  transition: background-color 0.3s ease;
+}
+
+/* Container and Header */
+.login-container {
+  padding: 2rem;
+  max-width: 500px;
+  margin: auto;
+  transition: padding 0.3s ease, max-width 0.3s ease;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  transition: margin-bottom 0.3s ease;
+}
+
+.login-header h1 {
+  color: #228B22; /* Change color to green */
+  transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+/* Toggle Container */
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: margin-bottom 0.3s ease;
+}
+
+.toggle-btn {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  transition: background-color 0.3s, padding 0.3s ease;
+}
+
+.toggle-btn.active {
+  background: #228B22; /* Change color to green */
+  color: white;
+  transition: background-color 0.3s, color 0.3s ease;
+}
+
+/* Form Container */
+.form-container {
+  margin-top: 1.5rem;
+  transition: margin-top 0.3s ease;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form input {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: margin-bottom 0.3s ease, padding 0.3s ease;
+}
+
+.login-form button {
+  padding: 0.75rem;
+  background-color: #228B22; /* Change color to green */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: #2d4373;
+}
+
+/* Account Message */
+.account-message {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  transition: margin-top 0.3s ease, font-size 0.3s ease;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 1.5rem;
+  }
+
+  .toggle-btn {
+    padding: 0.5rem 1rem;
+  }
+
+  .login-form input,
+  .login-form button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-header h1 {
+    font-size: 1.2rem;
+  }
+}
